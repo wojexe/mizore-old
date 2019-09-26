@@ -1,24 +1,24 @@
 <template>
   <div id="app">
-    <navigation-bar-combined :src="getAvatar()" />
-    <navbar-modal-log-in />
-    <navbar-modal-register />
+    <NavBar :src="getAvatar('')" />
+    <ModalLogin ref="login" />
+    <ModalRegister ref="register" />
     <router-view />
   </div>
 </template>
 
 <script>
-import NavBarCombined from "./components/NavBarCombined.vue";
-import NavBarModalLogIn from "@/components/NavBarModalLogIn.vue";
-import NavBarModalRegister from "@/components/NavBarModalRegister.vue";
+import TheNavBar from "@/components/TheNavBar.vue";
+import ModalLogin from "@/components/Modals/ModalLogin.vue";
+import ModalRegister from "@/components/Modals/ModalRegister.vue";
 export default {
   components: {
-    "navigation-bar-combined": NavBarCombined,
-    "navbar-modal-log-in": NavBarModalLogIn,
-    "navbar-modal-register": NavBarModalRegister
+    NavBar: TheNavBar,
+    ModalLogin: ModalLogin,
+    ModalRegister: ModalRegister
   },
   methods: {
-    getAvatar: profile => {
+    getAvatar(profile) {
       if (profile) {
         return "/assets/wojexe.png";
       } else {
@@ -47,6 +47,8 @@ body {
   padding: 0;
   background-color: var(--background-color);
   color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 a {
   text-decoration: none;
@@ -54,6 +56,7 @@ a {
 }
 #app {
   font-family: "Chivo", sans, sans-serif;
+  padding: calc(12vh + 70px) 0; // space for navbar
 }
 .hover {
   transition: 0.3s ease-in-out transform;

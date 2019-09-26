@@ -18,9 +18,9 @@ export default {
 .base-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: flex-start;
   min-height: 200px;
-  max-height: 60vh;
+  //max-height: 60vh;
   height: calc(100% - calc(1.6rem * 2)); // Subtract padding
   padding: 1.6rem 2.2rem;
   background-color: var(--card-color);
@@ -34,6 +34,7 @@ export default {
     align-self: center;
     margin-bottom: 1rem;
     text-align: center;
+    font-style: italic;
     user-select: none;
   }
 }

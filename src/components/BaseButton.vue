@@ -1,5 +1,5 @@
 <template>
-  <button class="hover">{{ label }}</button>
+  <button class="styled-button hover">{{ label }}</button>
 </template>
 
 <script>
@@ -11,8 +11,8 @@ export default {
 };
 </script>
 
-<style scoped lang="less">
-button {
+<style lang="less">
+.styled-button {
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--text-color);
@@ -24,7 +24,7 @@ button {
   );
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
   border-radius: 100px;
-  padding: 0.3rem 1.2rem;
+  padding: 0.4em 1.6em;
   outline: none;
   border: none;
   cursor: pointer;
