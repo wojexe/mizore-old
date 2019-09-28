@@ -22,7 +22,7 @@ export default {
   min-height: 200px;
   //max-height: 60vh;
   height: calc(100% - calc(1.6rem * 2)); // Subtract padding
-  padding: 1.6rem 2.2rem;
+  padding: 1.6rem 2.4rem;
   background-color: var(--card-color);
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
   border-radius: 45px;

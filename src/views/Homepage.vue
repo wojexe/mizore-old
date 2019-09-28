@@ -2,18 +2,20 @@
   <div id="homepage">
     <CardUncho />
     <CardInfo />
-    <base-card title="Another card!" />
+    <BeatmapsRanked />
   </div>
 </template>
 
 <script>
 import CardUncho from "@/components/Cards/CardUncho.vue";
 import CardInfo from "@/components/Cards/CardInfo.vue";
+import BeatmapsRanked from "@/components/Cards/CardBeatmapsRanked.vue";
 export default {
   name: "Homepage",
   components: {
     CardUncho: CardUncho,
-    CardInfo: CardInfo
+    CardInfo: CardInfo,
+    BeatmapsRanked: BeatmapsRanked
   }
 };
 </script>

@@ -15,16 +15,18 @@
       </table>
     </div>
     <BaseButton label="Download switcher" />
-    <a class="show-more hover" @click="requestData">show more</a>
+    <BaseShowMore @click="requestData" />
   </base-card>
 </template>
 
 <script>
 import BaseButton from "@/components/BaseButton.vue";
+import BaseShowMore from "@/components/BaseShowMore.vue";
 export default {
   name: "Info",
   components: {
-    BaseButton: BaseButton
+    BaseButton: BaseButton,
+    BaseShowMore: BaseShowMore
   },
   data() {
     return {
@@ -110,11 +112,6 @@ export default {
   .styled-button {
     padding: 0.6em 1em;
     font-style: italic;
-  }
-  .show-more {
-    color: rgba(255, 255, 255, 0.2);
-    font-weight: 500;
-    cursor: pointer;
   }
 }
 </style>
