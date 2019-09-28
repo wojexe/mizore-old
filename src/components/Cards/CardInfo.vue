@@ -3,35 +3,11 @@
     <div class="news-table">
       <table>
         <tbody>
-          <tr>
+          <tr v-for="item in news" :key="item.key">
             <td>
-              <a class="hover">
-                <span>12 APR</span>
-                New beatmap ranking system is online!
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="hover">
-                <span>12 FEB</span>
-                A brand new scoring system is live!
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="hover">
-                <span>12 DEC</span>
-                Get ready for another release from our developers!
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a class="hover">
-                <span>12 SEPT</span>
-                UNCHO is now up and running! HYPE UP!
+              <a>
+                <span>{{ item.date }}</span>
+                {{ item.title }}
               </a>
             </td>
           </tr>
@@ -49,6 +25,32 @@ export default {
   name: "Info",
   components: {
     BaseButton: BaseButton
+  },
+  data() {
+    return {
+      news: [
+        {
+          key: "1",
+          date: "12 APR",
+          title: "New beatmap ranking system is online!"
+        },
+        {
+          key: "2",
+          date: "12 FEB",
+          title: "A brand new scoring system is live!"
+        },
+        {
+          key: "3",
+          date: "12 DEC",
+          title: "Get ready for another release from our developers!"
+        },
+        {
+          key: "4",
+          date: "12 SEPT",
+          title: "UNCHO is now up and running! HYPE UP!"
+        }
+      ]
+    };
   },
   methods: {
     requestData() {
