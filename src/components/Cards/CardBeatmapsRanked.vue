@@ -1,16 +1,25 @@
 <template>
   <base-card title="New ranked beatmaps">
     <div class="beatmaps-container">
-      <a class="beatmap-card" :href="'https://osu.ppy.sh/beatmapsets/' + item.id" v-for="item in beatmaps" :key="item.id">
+      <a
+        class="beatmap-card"
+        :href="'https://osu.ppy.sh/beatmapsets/' + item.id"
+        v-for="item in beatmaps"
+        :key="item.id"
+      >
         <span class="beatmap-card--artist">{{ item.artist }}</span>
         <span class="beatmap-card--title">{{ item.title }}</span>
         <div class="beatmap-card--diff-container">
-          <div class="beatmap-card--diff" v-for="diffabbr in item.diffs" :key="diffabbr">
+          <div
+            class="beatmap-card--diff"
+            v-for="diffabbr in item.diffs"
+            :key="diffabbr"
+          >
             {{ diffabbr }}
           </div>
         </div>
         <div class="beatmaps-card--background-blur"></div>
-        <img :src="item.background" class="beatmap-card--background">
+        <img :src="item.background" class="beatmap-card--background" />
       </a>
     </div>
     <BaseShowMore @click="requestData" />
@@ -76,7 +85,9 @@ export default {
       border-radius: 35px;
       z-index: 10;
       overflow: hidden;
-      .beatmap-card--artist, .beatmap-card--title, .beatmap-card--diff-container {
+      .beatmap-card--artist,
+      .beatmap-card--title,
+      .beatmap-card--diff-container {
         position: relative;
         top: 0.65rem;
       }
@@ -144,7 +155,7 @@ export default {
         min-height: 100%;
         display: block;
         z-index: 1;
-        }
+      }
     }
   }
   & > * {
