@@ -4,16 +4,19 @@
     <ModalLogin ref="login" />
     <ModalRegister ref="register" />
     <router-view />
+    <Footer />
   </div>
 </template>
 
 <script>
 import TheNavBar from "@/components/TheNavBar.vue";
+import TheFooter from "@/components/TheFooter.vue";
 import ModalLogin from "@/components/Modals/ModalLogin.vue";
 import ModalRegister from "@/components/Modals/ModalRegister.vue";
 export default {
   components: {
     NavBar: TheNavBar,
+    Footer: TheFooter,
     ModalLogin: ModalLogin,
     ModalRegister: ModalRegister
   },
@@ -55,8 +58,14 @@ a {
   color: unset;
 }
 #app {
-  font-family: "Chivo", sans, sans-serif;
-  padding: calc(12vh + 70px) 0; // space for navbar
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Chivo", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+  padding-top: calc(12vh + 70px); // space for navbar
 }
 .hover {
   transition: 0.3s ease-in-out transform;

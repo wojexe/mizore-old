@@ -23,6 +23,7 @@ export default {
 <style scoped lang="less">
 #homepage {
   display: grid;
+  width: 100%;
   grid-template-columns: 1fr [content] 80% 1fr;
   grid-template-rows: auto;
   grid-row-gap: 50px;

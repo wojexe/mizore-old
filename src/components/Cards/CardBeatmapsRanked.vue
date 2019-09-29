@@ -91,6 +91,10 @@ export default {
         position: relative;
         top: 0.65rem;
       }
+      .beatmap-card--artist,
+      .beatmap-card--title {
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.35);
+      }
       .beatmap-card--artist {
         font-size: 1.25em;
         width: 90%;
@@ -125,7 +129,7 @@ export default {
           width: 2.2em;
           height: 2.2em;
           border-radius: 100px;
-          box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.35);
         }
       }
       & > *:not(img) {

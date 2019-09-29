@@ -3,17 +3,27 @@ import App from "./App.vue";
 import BaseCard from "./components/BaseCard.vue";
 import router from "./router";
 
-import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faUser,
   faEye,
   faEyeSlash,
-  faTimes
-} from "@fortawesome/free-solid-svg-icons"; // faBan
+  faTimes,
+  faDollarSign
+} from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faDiscord } from "@fortawesome/free-brands-svg-icons";
+
+import { library } from "@fortawesome/fontawesome-svg-core";
+library.add(
+  faUser,
+  faEye,
+  faEyeSlash,
+  faTimes,
+  faDollarSign,
+  faGithub,
+  faDiscord
+);
+
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-
-library.add(faUser, faEye, faEyeSlash, faTimes);
-
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 window.FontAwesomeConfig = {
