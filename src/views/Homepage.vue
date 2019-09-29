@@ -1,40 +1,23 @@
 <template>
-  <div id="homepage">
+  <Layout>
     <CardUncho />
     <CardInfo />
     <BeatmapsRanked />
-  </div>
+  </Layout>
 </template>
 
 <script>
 import CardUncho from "@/components/Cards/CardUncho.vue";
 import CardInfo from "@/components/Cards/CardInfo.vue";
 import BeatmapsRanked from "@/components/Cards/CardBeatmapsRanked.vue";
+import TheLayout from "@/components/TheLayout.vue";
 export default {
   name: "Homepage",
   components: {
-    CardUncho: CardUncho,
+    Layout: TheLayout,
     CardInfo: CardInfo,
+    CardUncho: CardUncho,
     BeatmapsRanked: BeatmapsRanked
   }
 };
 </script>
-
-<style scoped lang="less">
-#homepage {
-  display: grid;
-  width: 100%;
-  grid-template-columns: 1fr [content] 80% 1fr;
-  grid-template-rows: auto;
-  grid-row-gap: 50px;
-  & > * {
-    grid-column: content;
-  }
-}
-
-@media (min-width: 1000px) {
-  #homepage {
-    grid-template-columns: 1fr [content] 800px 1fr; // Make it that max width of the content column doesnt exceed 800px
-  }
-}
-</style>
