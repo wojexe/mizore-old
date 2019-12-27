@@ -22,4 +22,12 @@
     margin-bottom: 0;
   }
 }
+@media (max-width: 420px) {
+  #presentation {
+    /deep/ h1 {
+      font-size: 3rem;
+      padding: 1.5rem 2.5rem;
+    }
+  }
+}
 </style>

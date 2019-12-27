@@ -77,7 +77,8 @@ export default {
     width: 100%;
     border-radius: 20px;
     font-size: 1.1em;
-    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: auto;
     background: #303030;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     table {

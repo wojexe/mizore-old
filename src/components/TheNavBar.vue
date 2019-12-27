@@ -49,7 +49,7 @@ export default {
   justify-content: center;
   align-items: center;
   position: fixed;
-  font-size: 1.2rem;
+  font-size: var(--font-size-M);
   top: 0;
   left: 5vw; // (100vw - 90vw [element width]) / 2
   width: 90vw;
@@ -84,6 +84,11 @@ export default {
   #nav {
     max-width: 820px;
     left: calc(50% - 410px);
+  }
+}
+@media (min-height: 750px) {
+  #nav {
+    font-size: var(--font-size-L);
   }
 }
 </style>

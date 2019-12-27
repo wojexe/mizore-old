@@ -41,6 +41,11 @@ export default {
   --background-color: #121212;
   --card-color: #252525;
   --text-color: #ffffff;
+
+  --font-size-S: 0.9rem;
+  --font-size-M: 1rem;
+  --font-size-L: 1.2rem;
+  --font-size-XXL: 2rem;
 }
 
 /* GLOBAL CODE */

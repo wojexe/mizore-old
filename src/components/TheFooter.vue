@@ -30,7 +30,7 @@ export default {
   justify-content: center;
   align-items: center;
   background-color: var(--card-color);
-  font-size: 1.25em;
+  font-size: var(--font-size-S);
   font-weight: 700;
   font-style: italic;
   margin: 100px 0;
@@ -51,6 +51,11 @@ export default {
     & > * {
       cursor: pointer;
     }
+  }
+}
+@media (min-width: 800px) {
+  #footer {
+    font-size: var(--font-size-L);
   }
 }
 </style>

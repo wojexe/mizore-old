@@ -20,8 +20,6 @@
 </template>
 
 <script>
-//TODO:
-// adjust styles of the switcher to work on smaller screen sizes
 export default {
   name: "NavBarSiteSwitcher",
   data() {
@@ -68,17 +66,17 @@ export default {
 <style lang="less">
 #siteSwitcher {
   position: absolute;
-  top: 0;
   left: 50%;
-  transform: translate(-50%, calc(calc(0.25em + 1.2rem + calc(1.2em) / 2) / 2));
-  background-color: none;
+  transform: translateX(calc(-50% - 0.25rem));
+  margin: 0;
   padding: 1.2em 2.25em;
+  list-style-type: none;
   border-radius: 35px;
   box-shadow: none;
-  margin: 0;
-  list-style-type: none;
+  background-color: none;
   transition: all ease 0.3s;
   &.active {
+    transform: translate(calc(-50% - 0.25em), calc(1.22rem * 3));
     background-color: var(--card-color);
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
     transition: all ease 0.3s;
@@ -93,7 +91,7 @@ export default {
     display: none;
     position: relative;
     text-align: center;
-    padding: 0.25em;
+    padding: 0.25em; // 0.75em = one item
     padding-bottom: 0.5em;
     transform: translateY(-0.25rem); // cancel out padding
     &:last-of-type {
@@ -117,10 +115,10 @@ export default {
         pointer-events: all;
       }
       &::after {
-        right: calc(-1 * 1em);
+        right: -1em;
       }
       &::before {
-        left: calc(-1 * 1em);
+        left: -1em;
       }
     }
     a {

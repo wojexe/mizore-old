@@ -65,8 +65,10 @@ export default {
 .base-card {
   align-items: center;
   .beatmaps-container {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-rows: minmax(180px, 1fr) minmax(180px, 1fr);
+    grid-template-columns: 100%;
+    grid-gap: 1.5em;
     align-items: center;
     justify-content: space-between;
     height: 100%;
@@ -80,8 +82,8 @@ export default {
       height: 100%;
       min-height: 125px;
       width: 100%;
-      margin: 2.2em;
-      margin-left: 0;
+      //margin: 2.2em;
+      //margin-left: 0;
       border-radius: 35px;
       z-index: 10;
       overflow: hidden;
@@ -166,6 +168,14 @@ export default {
     margin: 0.6em 0;
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+}
+@media (min-width: 800px) {
+  .base-card {
+    .beatmaps-container {
+      grid-template-rows: minmax(180px, 1fr);
+      grid-template-columns: 1fr 1fr;
     }
   }
 }

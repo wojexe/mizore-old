@@ -44,7 +44,8 @@ export default {
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 90px;
+  //top: 3em;
+  transform: translateY(105%);
   padding: 0.75rem 1.5rem;
   background-color: var(--card-color);
   border-radius: 35px;
@@ -52,11 +53,17 @@ export default {
   z-index: 150;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
   &.visible {
     opacity: 1;
     pointer-events: all;
     transition: opacity 0.3s ease;
+  }
+}
+@media (min-height: 750px) {
+  .popup {
+    //top: 4.2em;
+    transition: all 0.3s ease;
   }
 }
 </style>
