@@ -47,4 +47,9 @@ export default {
     }
   }
 }
+@media (max-width: 400px) {
+  .base-card {
+    padding: calc(1.6rem * 1 / 2) inherit;
+  }
+}
 </style>

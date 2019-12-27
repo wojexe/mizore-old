@@ -2,6 +2,11 @@
   <base-card title="uncho" id="presentation"></base-card>
 </template>
 
+<script>
+export default {
+  name: "Uncho"
+};
+</script>
 <style lang="less">
 #presentation {
   background-image: url("/assets/wojexe.png");

@@ -38,9 +38,9 @@ export default {
 
 /* VARIABLES */
 :root {
-  --background-color: #121212;
-  --card-color: #252525;
-  --text-color: #ffffff;
+  --background-color: rgb(18, 18, 18);
+  --card-color: rgb(37, 37, 37);
+  --text-color: rgb(255, 255, 255);
 
   --font-size-S: 0.9rem;
   --font-size-M: 1rem;
