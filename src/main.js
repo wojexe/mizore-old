@@ -8,7 +8,9 @@ import {
   faEye,
   faEyeSlash,
   faTimes,
-  faDollarSign
+  faDollarSign,
+  faUserPlus,
+  faEnvelope
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faDiscord } from "@fortawesome/free-brands-svg-icons";
 
@@ -19,6 +21,8 @@ library.add(
   faEyeSlash,
   faTimes,
   faDollarSign,
+  faUserPlus,
+  faEnvelope,
   faGithub,
   faDiscord
 );

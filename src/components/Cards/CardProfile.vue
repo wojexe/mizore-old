@@ -1,24 +1,34 @@
 <template>
-  <BaseCard>
-    <div id="card-contents">
-      <img id="profile-avatar" src="/assets/wojexe.png" />
-      <div id="username">wojexe</div>
-      <div id="profile-rankings">
-        <div id="ranking-country">
-          <div class="country">POLAND</div>
-          <img class="icon" id="flag" src="/assets/wojexe.png" />
-          <div class="rank">#10000</div>
+  <div id="profile-card-wrapper">
+    <BaseCard>
+      <div id="card-contents">
+        <img id="profile-avatar" src="/assets/wojexe.png" />
+        <div id="username">wojexe</div>
+        <div id="profile-rankings">
+          <div id="ranking-country">
+            <div class="country">POLAND</div>
+            <img class="icon" id="flag" src="/assets/wojexe.png" />
+            <div class="rank">#10000</div>
+          </div>
+          <div id="ranking-global">
+            <div class="global">GLOBAL</div>
+            <img class="icon" id="globe" src="/assets/wojexe.png" />
+            <div class="rank">#10000</div>
+          </div>
         </div>
-        <div id="ranking-global">
-          <div class="global">GLOBAL</div>
-          <img class="icon" id="globe" src="/assets/wojexe.png" />
-          <div class="rank">#10000</div>
-        </div>
+        <div id="profile-pp">6432pp</div>
       </div>
-      <div id="profile-pp">6432pp</div>
+      <img id="card-background" src="https://picsum.photos/1600/901" />
+    </BaseCard>
+    <div id="profile-actions">
+      <font-awesome-icon
+        class="hover action"
+        icon="user-plus"
+        @click="turnModal"
+      />
+      <font-awesome-icon class="hover action" icon="envelope" />
     </div>
-    <img id="card-background" src="https://picsum.photos/1600/901" />
-  </BaseCard>
+  </div>
 </template>
 
 <script>
@@ -32,6 +42,31 @@ export default {
 </script>
 
 <style lang="less" scoped>
+#profile-card-wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  #profile-actions {
+    display: grid;
+    grid-template-rows: 1;
+    grid-template-columns: auto;
+    grid-gap: 0.75em;
+    margin-top: 1em;
+    & > * {
+      grid-row: 1;
+    }
+    .action {
+      position: relative;
+      width: 1em;
+      padding: 1em;
+      cursor: pointer;
+      background: var(--card-color);
+      border-radius: 100px;
+    }
+  }
+}
 .base-card {
   position: relative;
   width: 60%;
