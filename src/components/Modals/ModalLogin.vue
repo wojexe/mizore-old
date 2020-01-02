@@ -24,7 +24,7 @@ import BaseModal from "@/components/BaseModal.vue";
 import BaseInput from "@/components/BaseInput.vue";
 import BaseButton from "@/components/BaseButton.vue";
 export default {
-  name: "ModalRegister",
+  name: "ModalLogin",
   components: {
     BaseModal: BaseModal,
     BaseInput: BaseInput,

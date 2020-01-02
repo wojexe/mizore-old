@@ -12,10 +12,11 @@
         <div class="beatmap-card--diff-container">
           <div
             class="beatmap-card--diff"
+            :style="{ backgroundColor: getColor(diffabbr) }"
             v-for="diffabbr in item.diffs"
             :key="diffabbr"
           >
-            {{ diffabbr }}
+            {{ diffabbr == "EX+" ? "EX" : diffabbr }}
           </div>
         </div>
         <div class="beatmaps-card--background-blur"></div>
@@ -35,6 +36,14 @@ export default {
   },
   data() {
     return {
+      colors: {
+        EZ: "#65821d",
+        NM: "#65c8fa",
+        HR: "#d4ac40",
+        IN: "#fa65a7",
+        EX: "#876ade",
+        "EX+": "#000"
+      },
       beatmaps: [
         {
           id: "1",
@@ -47,7 +56,7 @@ export default {
           id: "2",
           artist: "Our Stolen Theory",
           title: "UNITED (LAOS Remix)",
-          diffs: ["EZ", "NM", "EX"],
+          diffs: ["EZ", "NM", "HR", "EX+", "+4"],
           background: "https://picsum.photos/1600/900"
         }
       ]
@@ -56,6 +65,24 @@ export default {
   methods: {
     requestData() {
       return "";
+    },
+    getColor(diffabbr) {
+      switch (diffabbr) {
+        case "EZ":
+          return this.colors.EZ;
+        case "NM":
+          return this.colors.NM;
+        case "HR":
+          return this.colors.HR;
+        case "IN":
+          return this.colors.IN;
+        case "EX":
+          return this.colors.EX;
+        case "EX+":
+          return this.colors["EX+"];
+        default:
+          return "#ccc";
+      }
     }
   }
 };
@@ -82,8 +109,6 @@ export default {
       height: 100%;
       min-height: 125px;
       width: 100%;
-      //margin: 2.2em;
-      //margin-left: 0;
       border-radius: 35px;
       z-index: 10;
       overflow: hidden;
@@ -115,16 +140,20 @@ export default {
         overflow: hidden;
       }
       .beatmap-card--diff-container {
-        display: flex;
-        flex-direction: row;
-        width: 80%;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 1;
+        grid-gap: 1.5em;
         margin-top: 0.2em;
-        justify-content: space-evenly;
+        & > * {
+          grid-row: 1;
+        }
         .beatmap-card--diff {
+          position: relative;
           display: flex;
           justify-content: center;
           align-items: center;
-          background-color: #fff;
+          background-color: red;
           color: #000;
           font-weight: 700;
           font-size: 1.1em;
@@ -132,6 +161,17 @@ export default {
           height: 2.2em;
           border-radius: 100px;
           box-shadow: 0 0 5px rgba(0, 0, 0, 0.35);
+          z-index: 5;
+          &::before {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 85%;
+            height: 85%;
+            background: #fff;
+            border-radius: 100px;
+            z-index: -1;
+          }
         }
       }
       & > *:not(img) {

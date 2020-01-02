@@ -67,7 +67,7 @@ export default {
 #siteSwitcher {
   position: absolute;
   left: 50%;
-  transform: translateX(calc(-50% - 0.25rem));
+  transform: translateX(calc(-50% - 0.05rem));
   margin: 0;
   padding: 1.2em 2.25em;
   list-style-type: none;
@@ -75,6 +75,7 @@ export default {
   box-shadow: none;
   background-color: none;
   transition: all ease 0.3s;
+  z-index: 150;
   &.active {
     transform: translate(calc(-50% - 0.25em), calc(1.22rem * 3));
     background-color: var(--card-color);
@@ -123,7 +124,7 @@ export default {
     }
     a {
       display: inline-block;
-      transition: 0.3s ease all;
+      transition: all ease 0.3s;
       &:hover {
         text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         transform: scale(1.1);
