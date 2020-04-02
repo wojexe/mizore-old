@@ -7,7 +7,7 @@
       <a href="https://github.com/wojexe/mizore" target="_blank"
         ><font-awesome-icon class="hover" :icon="['fab', 'github']"
       /></a>
-      <a href="https://discord.gg/2zrxZ4W" target="_blank"
+      <a href="https://discord.gg/rJGPnXB" target="_blank"
         ><font-awesome-icon class="hover" :icon="['fab', 'discord']"
       /></a>
       <a href="https://paypal.me/wojexe" target="_blank"

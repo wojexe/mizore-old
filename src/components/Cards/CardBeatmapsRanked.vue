@@ -1,6 +1,7 @@
 <template>
   <base-card title="New ranked beatmaps">
-    <div class="beatmaps-container">
+    <div class="beatmaps-container" :style="rankedBeatmapStyle">
+      <!-- <div class="beatmaps-container"> -->
       <a
         class="beatmap-card"
         :href="'https://osu.ppy.sh/beatmapsets/' + item.id"
@@ -28,6 +29,7 @@
 </template>
 
 <script>
+//TODO (after api implementation) make diffs collapse when they overflow
 import BaseShowMore from "@/components/BaseShowMore.vue";
 export default {
   name: "BeatmapsRanked",
@@ -59,7 +61,8 @@ export default {
           diffs: ["EZ", "NM", "HR", "EX+", "+4"],
           background: "https://picsum.photos/1600/900"
         }
-      ]
+      ],
+      windowWidth: window.innerWidth
     };
   },
   methods: {
@@ -84,16 +87,36 @@ export default {
           return "#ccc";
       }
     }
+  },
+  computed: {
+    rankedBeatmapStyle() {
+      return {
+        gridTemplateRows:
+          this.windowWidth >= 960
+            ? `${"minmax(180px, 220px) ".repeat(
+                Math.floor(this.beatmaps.length / 2)
+              )}`
+            : `${"minmax(180px, 220px) ".repeat(this.beatmaps.length)}`
+      };
+    }
+  },
+  mounted() {
+    window.addEventListener("resize", () => {
+      this.windowWidth = window.innerWidth;
+    });
   }
 };
 </script>
 
 <style scoped lang="less">
+:root {
+  --ranked-beatmaps-count: 2;
+}
 .base-card {
   align-items: center;
   .beatmaps-container {
     display: grid;
-    grid-template-rows: minmax(180px, 1fr) minmax(180px, 1fr);
+    //grid-template-rows handled by js
     grid-template-columns: 100%;
     grid-gap: 1.5em;
     align-items: center;
@@ -108,7 +131,6 @@ export default {
       position: relative;
       height: 100%;
       min-height: 125px;
-      width: 100%;
       border-radius: 35px;
       z-index: 10;
       overflow: hidden;
@@ -211,10 +233,10 @@ export default {
     }
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 960px) {
   .base-card {
     .beatmaps-container {
-      grid-template-rows: minmax(180px, 1fr);
+      //grid-template-rows handled by js
       grid-template-columns: 1fr 1fr;
     }
   }

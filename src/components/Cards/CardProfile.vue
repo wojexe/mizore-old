@@ -21,12 +21,12 @@
       <img id="card-background" src="https://picsum.photos/1600/901" />
     </BaseCard>
     <div id="profile-actions">
-      <font-awesome-icon
-        class="hover action"
-        icon="user-plus"
-        @click="turnModal"
-      />
-      <font-awesome-icon class="hover action" icon="envelope" />
+      <div class="hover action">
+        <font-awesome-icon icon="user-plus" @click="turnModal" />
+      </div>
+      <div class="hover action">
+        <font-awesome-icon icon="envelope" />
+      </div>
     </div>
   </div>
 </template>
@@ -58,11 +58,16 @@ export default {
       grid-row: 1;
     }
     .action {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: relative;
       width: 1em;
+      height: 1em;
       padding: 1em;
       cursor: pointer;
       background: var(--card-color);
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
       border-radius: 100px;
     }
   }
@@ -74,6 +79,7 @@ export default {
   justify-self: center;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
   #card-background {
     display: block;
     position: absolute;

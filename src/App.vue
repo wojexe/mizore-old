@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <NavBar :src="getAvatar('a')" />
+    <NavBar :src="getAvatar('')" />
     <ModalLogin ref="login" />
     <ModalRegister ref="register" />
     <router-view />
