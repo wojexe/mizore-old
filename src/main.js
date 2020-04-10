@@ -10,7 +10,10 @@ import {
   faTimes,
   faDollarSign,
   faUserPlus,
-  faEnvelope
+  faEnvelope,
+  faLocationArrow,
+  faSuitcase,
+  faStar
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faDiscord } from "@fortawesome/free-brands-svg-icons";
 
@@ -23,6 +26,10 @@ library.add(
   faDollarSign,
   faUserPlus,
   faEnvelope,
+  faLocationArrow,
+  faSuitcase,
+  faStar,
+
   faGithub,
   faDiscord
 );

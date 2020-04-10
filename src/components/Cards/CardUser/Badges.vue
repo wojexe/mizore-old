@@ -11,6 +11,7 @@
 </template>
 
 <script>
+//TODO: implement api
 export default {
   name: "Badges",
   data() {

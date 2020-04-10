@@ -32,6 +32,7 @@
 </template>
 
 <script>
+//TODO: implement api
 import BaseCard from "@/components/BaseCard.vue";
 export default {
   name: "Profile",

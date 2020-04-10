@@ -29,7 +29,8 @@
 </template>
 
 <script>
-//TODO (after api implementation) make diffs collapse when they overflow
+//TODO: implement api
+//TODO: (after api implementation) make diffs collapse when they overflow
 import BaseShowMore from "@/components/BaseShowMore.vue";
 export default {
   name: "BeatmapsRanked",

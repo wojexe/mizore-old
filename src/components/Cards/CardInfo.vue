@@ -79,7 +79,7 @@ export default {
     font-size: 1.1em;
     overflow-y: hidden;
     overflow-x: auto;
-    background: #303030;
+    background: var(--inner-background-color);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     table {
       height: 100%;
