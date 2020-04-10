@@ -19,4 +19,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.base-card {
+  align-items: center;
+}
+</style>

@@ -218,6 +218,11 @@ export default {
     }
   }
 }
+@media (min-width: 470px) {
+  .base-card #card-contents #profile-rankings {
+    font-size: var(--font-size-L);
+  }
+}
 @media (min-width: 800px) {
   .base-card {
     #card-contents {

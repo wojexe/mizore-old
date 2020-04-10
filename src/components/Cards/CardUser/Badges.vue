@@ -3,7 +3,8 @@
     <img
       v-for="badge in userData.badges"
       :key="badge.name"
-      :src="`/assets/` + /*badge.name.toLowerCase()*/ `donator` + `.png`"
+      :src="`/assets/badges/` + badge.name.toLowerCase() + `.png`"
+      :alt="badge.name.toLowerCase()"
       class="badge"
     />
   </div>
@@ -44,36 +45,27 @@ export default {
 </script>
 
 <style lang="less">
-.base-card {
-  align-items: center;
-}
 #badges {
   display: grid;
   grid-template-rows: 1;
   grid-gap: 0.75em;
+  align-items: center;
+  justify-items: center;
   width: 75%;
   height: 3em;
-  overflow: scroll;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scroll-padding: 0.5em;
   .badge {
-    grid-row: 1;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 80px;
+    position: relative;
+    grid-row: 1;
+    max-width: 80px;
     height: 30px;
-    // margin: 0 0.75em;
     text-transform: uppercase;
+    scroll-snap-align: start;
     border-radius: 7.5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-    &::after {
-      position: absolute;
-      display: block;
-      content: "";
-      width: 100%;
-      height: 100%;
-      border-radius: 7.5%;
-      box-shadow: rgba(0, 0, 0, 0.25);
-    }
+    box-shadow: 0 0 7.5px rgba(0, 0, 0, 0.25);
   }
   .border {
     display: block;

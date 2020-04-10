@@ -23,12 +23,12 @@ export default {
   height: calc(100% - calc(1.6rem * 2)); // Subtract padding
   padding: 1.6rem 2.4rem;
   overflow: hidden;
+  scroll-margin-top: 5rem;
   font-size: var(--font-size-S);
   background-color: var(--card-color);
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
   border-radius: 45px;
   h1 {
-    display: inline;
     margin: 0;
     font-size: var(--font-size-XXL);
     align-self: center;
