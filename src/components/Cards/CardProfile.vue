@@ -22,7 +22,7 @@
     </BaseCard>
     <div id="profile-actions">
       <div class="hover action">
-        <font-awesome-icon icon="user-plus" @click="turnModal" />
+        <font-awesome-icon icon="user-plus" />
       </div>
       <div class="hover action">
         <font-awesome-icon icon="envelope" />
@@ -194,6 +194,7 @@ export default {
         .rank {
           grid-row: bottom;
           grid-column: 1;
+          font-variant-numeric: tabular-nums;
         }
       }
     }
@@ -213,6 +214,7 @@ export default {
       background-color: rgba(255, 255, 255, 0.7);
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
       text-transform: uppercase;
+      font-variant-numeric: tabular-nums;
     }
   }
 }

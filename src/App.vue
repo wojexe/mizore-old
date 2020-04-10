@@ -42,6 +42,13 @@ export default {
   --card-color: rgb(37, 37, 37);
   --text-color: rgb(255, 255, 255);
 
+  --color-gradient: linear-gradient(
+    to right,
+    rgb(18, 194, 233),
+    rgb(196, 113, 237),
+    rgb(246, 79, 89)
+  );
+
   --font-size-S: 0.9rem;
   --font-size-M: 1rem;
   --font-size-L: 1.2rem;

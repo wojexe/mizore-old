@@ -55,12 +55,7 @@ export default {
   width: 90vw;
   min-height: 80px;
   max-height: 12vh;
-  background: linear-gradient(
-    to right,
-    rgb(18, 194, 233),
-    rgb(196, 113, 237),
-    rgb(246, 79, 89)
-  );
+  background: var(--color-gradient);
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
   border-radius: 0px 0px 35px 35px;
   z-index: 100;

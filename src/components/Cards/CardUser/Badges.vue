@@ -48,21 +48,20 @@ export default {
   align-items: center;
 }
 #badges {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
+  display: grid;
+  grid-template-rows: 1;
+  grid-gap: 0.75em;
   width: 75%;
   height: 3em;
-  overflow: hidden;
+  overflow: scroll;
   .badge {
-    position: relative;
+    grid-row: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     min-width: 80px;
     height: 30px;
-    margin: 0 0.75em;
+    // margin: 0 0.75em;
     text-transform: uppercase;
     border-radius: 7.5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
