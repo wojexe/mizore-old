@@ -1,12 +1,18 @@
 <template>
   <base-card title="New ranked beatmaps" class="show-more">
     <div class="beatmaps-container" :style="rankedBeatmapStyle">
-      <!-- <div class="beatmaps-container"> -->
-      <a
+      <BaseBeatmap
         class="beatmap-card"
-        :href="'https://osu.ppy.sh/beatmapsets/' + item.id"
-        v-for="item in beatmaps"
+        v-for="(item, index) in beatmaps"
         :key="item.id"
+        :href="'https://osu.ppy.sh/beatmapsets/' + item.id"
+        :backgroundSource="item.background"
+        v-bind:class="{
+          spanned:
+            index == beatmaps.length - 1 &&
+            beatmaps.length % 2 != 0 &&
+            windowWidth >= 960
+        }"
       >
         <span class="beatmap-card--artist">{{ item.artist }}</span>
         <span class="beatmap-card--title">{{ item.title }}</span>
@@ -20,9 +26,7 @@
             {{ diffabbr == "EX+" ? "EX" : diffabbr }}
           </div>
         </div>
-        <div class="beatmaps-card--background-blur"></div>
-        <img :src="item.background" class="beatmap-card--background" />
-      </a>
+      </BaseBeatmap>
     </div>
     <BaseShowMore @click="requestData" />
   </base-card>
@@ -32,10 +36,12 @@
 //TODO: implement api
 //TODO: (after api implementation) make diffs collapse when they overflow
 import BaseShowMore from "@/components/BaseShowMore.vue";
+import BaseBeatmap from "@/components/BaseBeatmap.vue";
 export default {
   name: "BeatmapsRanked",
   components: {
-    BaseShowMore: BaseShowMore
+    BaseShowMore,
+    BaseBeatmap
   },
   data() {
     return {
@@ -53,14 +59,21 @@ export default {
           artist: "40meterP",
           title: "Usotsuki wa Koi no Hajimari",
           diffs: ["EZ", "NM", "EX"],
-          background: "https://picsum.photos/1600/901"
+          background: "https://picsum.photos/1600/900"
         },
         {
           id: "2",
           artist: "Our Stolen Theory",
           title: "UNITED (LAOS Remix)",
           diffs: ["EZ", "NM", "HR", "EX+", "+4"],
-          background: "https://picsum.photos/1600/900"
+          background: "https://picsum.photos/1600/901"
+        },
+        {
+          id: "3",
+          artist: "USAO",
+          title: "Showdown",
+          diffs: ["NM", "HR", "EX+"],
+          background: "https://picsum.photos/1600/903"
         }
       ],
       windowWidth: window.innerWidth
@@ -95,9 +108,9 @@ export default {
         gridTemplateRows:
           this.windowWidth >= 960
             ? `${"minmax(180px, 220px) ".repeat(
-                Math.floor(this.beatmaps.length / 2)
+                Math.ceil(this.beatmaps.length / 2)
               )}`
-            : `${"minmax(180px, 220px) ".repeat(this.beatmaps.length)}`
+            : `${"minmax(180px, max-content) ".repeat(this.beatmaps.length)}`
       };
     }
   },
@@ -110,14 +123,11 @@ export default {
 </script>
 
 <style scoped lang="less">
-:root {
-  --ranked-beatmaps-count: 2;
-}
 .base-card {
   align-items: center;
   .beatmaps-container {
     display: grid;
-    //grid-template-rows handled by js
+    // grid-template-rows handled by js
     grid-template-columns: 100%;
     grid-gap: 1.5em;
     align-items: center;
@@ -125,21 +135,11 @@ export default {
     height: 100%;
     width: 100%;
     .beatmap-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      height: 100%;
-      min-height: 125px;
-      border-radius: 35px;
-      z-index: 10;
-      overflow: hidden;
       .beatmap-card--artist,
       .beatmap-card--title,
       .beatmap-card--diff-container {
         position: relative;
-        top: 0.65rem;
+        top: 0.4rem;
       }
       .beatmap-card--artist,
       .beatmap-card--title {
@@ -168,6 +168,9 @@ export default {
         grid-template-rows: 1;
         grid-gap: 1.5em;
         margin-top: 0.2em;
+        font-family: "Chivo", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+          "Ubuntu", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol";
         & > * {
           grid-row: 1;
         }
@@ -197,34 +200,10 @@ export default {
           }
         }
       }
-      & > *:not(img) {
-        z-index: 10;
-      }
-      &:nth-child(2n) {
-        margin-right: 0;
-      }
-      .beatmaps-card--background-blur {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(7.5px);
-        border-radius: 35px;
-        z-index: 2;
-      }
-      img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        min-width: 100%;
-        height: auto;
-        min-height: 100%;
-        display: block;
-        z-index: 1;
-      }
+    }
+    .spanned {
+      grid-column-start: 1;
+      grid-column-end: 3;
     }
   }
   & > * {
