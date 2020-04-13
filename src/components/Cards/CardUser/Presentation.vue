@@ -52,6 +52,7 @@
           adipisicing elit. Ducimus odit ex unde maiores beatae eum sequi
           reiciendis nesciunt repellat. Dolor beatae autem veniam vero excepturi
           ex quae quis non et.
+          <BaseShowMore text="load more" />
         </div>
       </div>
     </div>
@@ -60,9 +61,13 @@
 
 <script>
 //TODO: implement api
+import BaseShowMore from "@/components/BaseShowMore.vue";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 export default {
   name: "Presentation",
+  components: {
+    BaseShowMore
+  },
   //TODO: make that code prettier 😜️
   computed: {
     getHeart() {
@@ -105,8 +110,6 @@ export default {
   #explication {
     display: grid;
     grid-template-columns: [left] 3fr [right] 7fr;
-    //grid-template-rows: [top] 1fr [bottom] 2fr [back];
-    width: 90%;
     grid-gap: 2em;
     h2 {
       font-size: calc(var(--font-size-L) * 1.1);
@@ -114,10 +117,20 @@ export default {
       margin-left: 0.75em;
     }
     .content {
+      display: flex;
+      flex-direction: column;
       background: var(--inner-background-color);
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-      padding: 1em;
+      padding: 1rem;
       border-radius: 20px;
+      .button--showmore {
+        align-self: center;
+        margin-top: 0.5rem;
+        padding: 0.25em 0.5em;
+        border-radius: 999px;
+        color: rgba(255, 255, 255, 1);
+        background-color: rgba(255, 255, 255, 0.15);
+      }
     }
     #playstyle {
       grid-column: left;
@@ -141,8 +154,8 @@ export default {
         & > * {
           margin-bottom: 0.25em;
         }
-        .value:last-of-type {
-          margin-bottom: none;
+        & > *:last-of-type {
+          margin-bottom: 0;
         }
         .stat {
           font-size: calc(var(--font-size-M) * 0.9);

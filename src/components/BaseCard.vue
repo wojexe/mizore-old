@@ -20,8 +20,9 @@ export default {
   flex-direction: column;
   align-items: flex-start;
   min-height: 200px;
-  height: calc(100% - calc(1.6rem * 2)); // Subtract padding
-  padding: 1.6rem 2.4rem;
+  // height: calc(100% - calc(1.6rem * 2)); // Subtract padding
+  padding: 2.4rem;
+  padding-top: 1.5rem;
   overflow: hidden;
   scroll-margin-top: 5rem;
   font-size: var(--font-size-S);
@@ -37,6 +38,9 @@ export default {
     font-style: italic;
     user-select: none;
   }
+}
+.show-more {
+  padding-bottom: 1.2rem;
 }
 @media (min-width: 800px) {
   .base-card {

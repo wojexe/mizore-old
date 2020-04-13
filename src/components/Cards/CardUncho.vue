@@ -9,6 +9,7 @@ export default {
 </script>
 <style lang="less" scoped>
 #presentation {
+  padding: 2rem;
   background-image: url("/assets/wojexe.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -25,7 +26,7 @@ export default {
     text-transform: uppercase;
 
     font-style: normal;
-    margin-bottom: 0;
+    margin: 0;
   }
 }
 @media (max-width: 420px) {

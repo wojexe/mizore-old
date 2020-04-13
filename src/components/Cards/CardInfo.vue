@@ -1,5 +1,5 @@
 <template>
-  <base-card title="Info">
+  <base-card title="Info" class="show-more">
     <div class="news-table">
       <table>
         <tbody>

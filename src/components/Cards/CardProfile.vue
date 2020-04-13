@@ -49,6 +49,9 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  .base-card {
+    padding: 2rem;
+  }
   #profile-actions {
     display: grid;
     grid-template-rows: 1;

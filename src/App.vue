@@ -75,8 +75,8 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Chivo", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+  font-family: "Chivo", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol";
   padding-top: calc(12vh + 70px); // space for navbar
 }

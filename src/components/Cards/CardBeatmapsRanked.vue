@@ -1,5 +1,5 @@
 <template>
-  <base-card title="New ranked beatmaps">
+  <base-card title="New ranked beatmaps" class="show-more">
     <div class="beatmaps-container" :style="rankedBeatmapStyle">
       <!-- <div class="beatmaps-container"> -->
       <a
