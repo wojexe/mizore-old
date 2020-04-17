@@ -1,6 +1,6 @@
 <template>
   <BaseModal>
-    <form id="form-login" method="post">
+    <form id="form-login" @submit.prevent="onSubmit">
       <span id="modal-title">LOGIN</span>
       <BaseInput
         className="username"
@@ -30,11 +30,19 @@ export default {
     BaseInput: BaseInput,
     BaseButton: BaseButton
   },
-  data: function() {
+  data() {
     return {
-      username: String,
-      password: String
+      username: "",
+      password: ""
     };
+  },
+  methods: {
+    onSubmit() {
+      // eslint-disable-next-line no-console
+      console.log("submitted 😉️");
+      // eslint-disable-next-line no-console
+      console.log(this.username, this.password);
+    }
   }
 };
 </script>
