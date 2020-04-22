@@ -1,6 +1,6 @@
 <template>
   <BaseModal>
-    <form id="form-login" method="post">
+    <form id="form-login" @submit.prevent="handleSubmit">
       <span id="modal-title">LOGIN</span>
       <BaseInput
         className="username"
@@ -23,6 +23,7 @@
 import BaseModal from "@/components/BaseModal.vue";
 import BaseInput from "@/components/BaseInput.vue";
 import BaseButton from "@/components/BaseButton.vue";
+import gql from 'graphql-tag';
 export default {
   name: "ModalLogin",
   components: {
@@ -35,6 +36,24 @@ export default {
       username: String,
       password: String
     };
+  },
+  methods: {
+    async handleSubmit(e) {
+      const result = await this.$apollo.mutate({
+        mutation: gql`mutation($username: String!, $password: String!) {
+          login(email: $username, password: $password) {
+            id
+          }
+        }`,
+
+        variables: {
+          username: e.target["0"].value,
+          password: e.target["1"].value
+        }
+      });
+      /* eslint no-console: "off" */
+      console.log(e, result);
+    }
   }
 };
 </script>
