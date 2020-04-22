@@ -31,10 +31,10 @@ export default {
     BaseInput: BaseInput,
     BaseButton: BaseButton
   },
-  data: function() {
+  data() {
     return {
-      username: String,
-      password: String
+      username: "",
+      password: ""
     };
   },
   methods: {

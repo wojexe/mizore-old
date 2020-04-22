@@ -2,10 +2,12 @@
   <div class="container-input">
     <label>{{ className }}</label>
     <input
-      :class="className"
       :name="className"
+      :class="className"
       :type="type"
       :autocomplete="autocomplete"
+      v-bind:value="value"
+      v-on:input="$emit('input', $event.target.value)"
     />
     <font-awesome-icon
       v-if="type === 'password'"
@@ -25,7 +27,8 @@ export default {
   },
   data() {
     return {
-      passwordShown: false
+      passwordShown: false,
+      value: ""
     };
   },
   methods: {
