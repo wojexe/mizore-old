@@ -1,7 +1,6 @@
 <template>
   <a class="beatmap-card">
     <slot />
-    <div class="beatmaps-card--background-blur"></div>
     <img :src="backgroundSource" class="beatmap-card--background" />
   </a>
 </template>
@@ -33,17 +32,6 @@ export default {
   & > *:not(img) {
     z-index: 10;
   }
-  .beatmaps-card--background-blur {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(7.5px);
-    border-radius: 35px;
-    z-index: 2;
-  }
   img {
     position: absolute;
     top: 0;
@@ -54,6 +42,7 @@ export default {
     min-height: 100%;
     display: block;
     z-index: 1;
+    filter: blur(7.5px);
     transform: scale(1.05);
   }
 }

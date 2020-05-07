@@ -2,11 +2,16 @@
   <div id="presentation">
     <div id="short-container">
       <div class="short">
-        <font-awesome-icon icon="location-arrow" />yo mama ass
+        <div><font-awesome-icon icon="location-arrow" /></div>
+        yo mama ass
       </div>
-      <div class="short"><font-awesome-icon :icon="getHeart" />big tiddies</div>
       <div class="short">
-        <font-awesome-icon icon="suitcase" />uncho! dev team
+        <div><font-awesome-icon :icon="getHeart" /></div>
+        big tiddies
+      </div>
+      <div class="short">
+        <div><font-awesome-icon icon="suitcase" /></div>
+        uncho! dev team
       </div>
     </div>
     <div id="explication">
@@ -95,7 +100,7 @@ export default {
       align-items: center;
       justify-content: center;
       margin: 0 1em;
-      & > svg {
+      & > div {
         display: flex;
         align-items: center;
         justify-content: center;
