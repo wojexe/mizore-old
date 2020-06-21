@@ -83,7 +83,6 @@ export default {
 </script>
 
 <style lang="less">
-//TODO: make this card responsive for mobile
 #presentation {
   display: flex;
   flex-direction: column;
@@ -177,6 +176,33 @@ export default {
       grid-row-start: 1;
       grid-row-end: 3;
       grid-column: right;
+    }
+  }
+}
+@media (max-width: 580px) {
+  #presentation {
+    #short-container {
+      flex-direction: column;
+      .short {
+        margin-bottom: 0.5em;
+      }
+      .short:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+    #explication {
+      grid-template-columns: 0;
+      grid-template-rows: [playstyle] max-content [stats] max-content [biogram] max-content;
+      grid-gap: 1em 0;
+      #playstyle {
+        grid-row: playstyle;
+      }
+      #stats {
+        grid-row: stats;
+      }
+      #biogram {
+        grid-row: biogram;
+      }
     }
   }
 }

@@ -6,7 +6,9 @@
         v-for="(item, index) in beatmaps"
         :key="item.id"
         :href="'https://osu.ppy.sh/beatmapsets/' + item.id"
-        :backgroundSource="item.background"
+        :backgroundSource="
+          'https://assets.ppy.sh/beatmaps/' + item.id + '/covers/cover.jpg'
+        "
         v-bind:class="{
           spanned:
             index == beatmaps.length - 1 &&
@@ -55,21 +57,21 @@ export default {
       },
       beatmaps: [
         {
-          id: "1",
+          id: "813712",
           artist: "40meterP",
           title: "Usotsuki wa Koi no Hajimari",
           diffs: ["EZ", "NM", "EX"],
           background: "https://picsum.photos/1600/900"
         },
         {
-          id: "2",
+          id: "237768",
           artist: "Our Stolen Theory",
           title: "UNITED (LAOS Remix)",
           diffs: ["EZ", "NM", "HR", "EX+", "+4"],
           background: "https://picsum.photos/1600/901"
         },
         {
-          id: "3",
+          id: "438839",
           artist: "USAO",
           title: "Showdown",
           diffs: ["NM", "HR", "EX+"],
@@ -182,7 +184,7 @@ export default {
           background-color: red;
           color: #000;
           font-weight: 700;
-          font-size: 1.1em;
+          font-size: var(--font-size-L);
           width: 2.2em;
           height: 2.2em;
           border-radius: 100px;

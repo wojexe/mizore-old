@@ -50,9 +50,13 @@ export default {
     rgb(246, 79, 89)
   );
 
+  --font-family: "Chivo", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
   --font-size-S: 0.9rem;
   --font-size-M: 1rem;
   --font-size-L: 1.2rem;
+  --font-size-XL: 1.5rem;
   --font-size-XXL: 2rem;
 }
 
@@ -75,9 +79,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Chivo", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: var(--font-family);
   padding-top: calc(12vh + 70px); // space for navbar
 }
 .hover {

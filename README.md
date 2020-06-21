@@ -1,4 +1,4 @@
-<p align="center"><img height="150px" src="./mizore.png" /></p>
+<p align="center"><img src="./mizore.png" /></p>
 
 霙 (mizore) is a website written on top of [Vue Framework](https://vuejs.org/), as a front-end for uncho.
 

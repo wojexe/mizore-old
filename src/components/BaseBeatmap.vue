@@ -26,9 +26,7 @@ export default {
   border-radius: 35px;
   z-index: 10;
   overflow: hidden;
-  font-family: "M PLUS Rounded 1c", "Chivo", BlinkMacSystemFont, "Segoe UI",
-    "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "M PLUS Rounded 1c", var(--font-family);
   & > *:not(img) {
     z-index: 10;
   }
@@ -43,7 +41,9 @@ export default {
     display: block;
     z-index: 1;
     filter: blur(7.5px);
+    opacity: 0.8;
     transform: scale(1.05);
+    transition: 0.3s all ease-in-out;
   }
 }
 </style>

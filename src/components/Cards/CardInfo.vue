@@ -83,7 +83,7 @@ export default {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     table {
       height: 100%;
-      width: 95%;
+      width: 100%;
       padding: 1.2em 1.4em;
       tr {
         td {
@@ -103,6 +103,7 @@ export default {
             }
           }
           white-space: nowrap;
+          overflow: hidden;
           text-overflow: ellipsis; // This for some reason doesn't work
           padding: 1.25em 0 0.2em 0;
           border-bottom: solid 1px #d0d0d0;
