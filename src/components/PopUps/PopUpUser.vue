@@ -1,26 +1,23 @@
 <template>
-  <BasePopUp>
-    <span class="popup-option" @click="modalTurn('login')">Login</span>
-    <span class="popup-option" @click="modalTurn('register')">Register</span>
+  <BasePopUp popup-name="user">
+    <span class="popup-option" @click="turnModal('login')">Login</span>
+    <span class="popup-option" @click="turnModal('register')">Register</span>
   </BasePopUp>
 </template>
 
 <script>
+import { EventBus } from "@/eventBus";
 import BasePopUp from "@/components/BasePopUp.vue";
 export default {
   name: "PopUpUser",
   components: {
     BasePopUp: BasePopUp
   },
-  data() {
-    return {
-      userOptions: [{ name: "Login" }, { name: "Register" }],
-      isVisible: false
-    };
-  },
   methods: {
-    modalTurn(key) {
-      eval(`this.$root.$children[0].$refs.${key}.$children[0].turnModal()`);
+    turnModal(modalName) {
+      // Close all
+      // EventBus.$emit(`CLEAR`);
+      EventBus.$emit(`modal_${modalName}-open`);
     }
   }
 };

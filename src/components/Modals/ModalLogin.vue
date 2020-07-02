@@ -1,5 +1,5 @@
 <template>
-  <BaseModal>
+  <BaseModal modalName="login">
     <form id="form-login" @submit.prevent="onSubmit">
       <span id="modal-title">LOGIN</span>
       <BaseInput

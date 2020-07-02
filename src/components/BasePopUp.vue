@@ -1,38 +1,53 @@
 <template>
-  <div class="popup" v-click-outside="hide">
+  <div class="popup" v-click-outside="clickOutside">
     <slot />
   </div>
 </template>
 
 <script>
+import { EventBus } from "@/eventBus";
 export default {
   name: "BasePopUp",
-  methods: {
-    hide() {
-      this.$parent.$emit("hide");
-    }
+  props: {
+    popupName: String
+  },
+  data() {
+    return {
+      isVisible: false
+    };
   },
   directives: {
     "click-outside": {
       bind(el, binding, vnode) {
-        vnode.context.event = function(event) {
+        vnode.context.event = e => {
+          // if (popup does not contain clickPos AND avatar (origin) does not contain clickPos)
           if (
-            !(
-              el == event.target ||
-              el.contains(event.target) ||
-              vnode.context.$parent.$parent.$el == event.target || // the avatar
-              vnode.context.$parent.$parent.$el.contains(event.target)
-            ) // the avatar contents
+            vnode.context.isVisible &&
+            !el.contains(e.target) &&
+            !vnode.elm.parentNode.contains(e.target)
           ) {
             vnode.context[binding.expression]();
           }
         };
-        document.body.addEventListener("mouseup", vnode.context.event);
+        document.body.addEventListener("click", vnode.context.event);
       },
       unbind(vnode) {
-        document.body.removeEventListener("mouseup", vnode.context.event);
+        document.body.removeEventListener("click", vnode.context.event);
       }
     }
+  },
+  methods: {
+    clickOutside() {
+      if (this.isVisible) {
+        EventBus.$emit(`popup_${this.popupName}-close`);
+        this.isVisible = false;
+      }
+    }
+  },
+  mounted() {
+    EventBus.$on(`popup_${this.popupName}-open`, () => {
+      this.isVisible = true;
+    });
   }
 };
 </script>

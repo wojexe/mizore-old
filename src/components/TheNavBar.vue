@@ -3,14 +3,16 @@
     <div id="content">
       <NavBarLogo class="hover" />
       <NavBarSiteSwitcher />
-      <NavBarAvatar @click.native="show" :src="src">
-        <PopUpUser :class="{ visible: isVisible }" @hide="hide" />
+      <NavBarAvatar :src="src" @click.native="showPopup('user')">
+        <PopUpUser :class="{ visible: isVisible }" />
       </NavBarAvatar>
     </div>
   </div>
 </template>
 
 <script>
+import { EventBus } from "@/eventBus";
+
 import NavBarLogo from "@/components/NavBar/NavBarLogo.vue";
 import NavBarAvatar from "@/components/NavBar/NavBarAvatar.vue";
 import NavBarSiteSwitcher from "@/components/NavBar/NavBarSiteSwitcher.vue";
@@ -23,21 +25,29 @@ export default {
     NavBarSiteSwitcher: NavBarSiteSwitcher,
     PopUpUser: PopUpUser
   },
+  props: {
+    src: String,
+    popupName: String
+  },
   data() {
     return {
       isVisible: false
     };
   },
-  props: {
-    src: String
-  },
   methods: {
-    show() {
-      this.isVisible = true;
-    },
-    hide() {
-      this.isVisible = false;
+    showPopup(popupName) {
+      if (!this.isVisible) {
+        EventBus.$emit(`popup_${popupName}-open`);
+      }
     }
+  },
+  mounted() {
+    EventBus.$on(`popup_user-open`, () => {
+      this.isVisible = true;
+    });
+    EventBus.$on(`popup_user-close`, () => {
+      this.isVisible = false;
+    });
   }
 };
 </script>

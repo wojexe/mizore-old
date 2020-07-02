@@ -1,5 +1,5 @@
 <template>
-  <BaseModal>
+  <BaseModal modalName="register">
     <form id="form-register" method="post">
       <span id="modal-title">REGISTER</span>
       <BaseInput

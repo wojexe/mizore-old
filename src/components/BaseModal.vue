@@ -4,13 +4,14 @@
       id="modal-close"
       class="hover"
       icon="times"
-      @click="turnModal"
+      @click="closeModal"
     />
     <slot />
   </div>
 </template>
 
 <script>
+import { EventBus } from "@/eventBus.js";
 export default {
   name: "BaseModal",
   data: function() {
@@ -18,10 +19,21 @@ export default {
       isVisible: false
     };
   },
+  props: {
+    modalName: String
+  },
   methods: {
-    turnModal() {
-      this.isVisible = !this.isVisible;
+    closeModal() {
+      EventBus.$emit(`modal_${this.modalName}-close`);
     }
+  },
+  mounted() {
+    EventBus.$on(`modal_${this.modalName}-open`, () => {
+      this.isVisible = true;
+    });
+    EventBus.$on(`modal_${this.modalName}-close`, () => {
+      this.isVisible = false;
+    });
   }
 };
 </script>
