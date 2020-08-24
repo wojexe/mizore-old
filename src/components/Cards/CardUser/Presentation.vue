@@ -123,7 +123,7 @@ export default {
     .content {
       display: flex;
       flex-direction: column;
-      background: var(--inner-background-color);
+      background: rgb(var(--inner-background-color));
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
       padding: 1rem;
       border-radius: 20px;
@@ -132,7 +132,7 @@ export default {
         margin-top: 0.5rem;
         padding: 0.25em 0.5em;
         border-radius: 999px;
-        color: rgba(255, 255, 255, 1);
+        color: rgba(var(--text-color), 1);
         background-color: rgba(255, 255, 255, 0.15);
       }
     }
@@ -163,7 +163,7 @@ export default {
         }
         .stat {
           font-size: calc(var(--font-size-M) * 0.9);
-          color: rgba(255, 255, 255, 0.75);
+          color: rgba(var(--text-color), 0.75);
         }
         .value {
           font-size: var(--font-size-M);

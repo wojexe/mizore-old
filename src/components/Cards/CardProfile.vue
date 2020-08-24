@@ -70,7 +70,7 @@ export default {
       height: 1em;
       padding: 1em;
       cursor: pointer;
-      background: var(--card-color);
+      background: rgb(var(--card-color));
       box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
       border-radius: 100px;
     }

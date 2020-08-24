@@ -62,7 +62,7 @@ export default {
   //top: 3em;
   transform: translateY(105%);
   padding: 0.75rem 1.5rem;
-  background-color: var(--card-color);
+  background-color: rgb(var(--card-color));
   border-radius: 35px;
   box-shadow: 0 0 35px rgba(0, 0, 0, 0.5);
   z-index: 150;

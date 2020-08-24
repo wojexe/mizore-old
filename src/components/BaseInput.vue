@@ -74,7 +74,7 @@ div {
     top: calc(2.15em - 0.525em);
     right: 0.4rem;
     cursor: pointer;
-    color: var(--card-color);
+    color: rgb(var(--card-color));
   }
 }
 </style>

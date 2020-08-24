@@ -26,7 +26,7 @@ export default {
   overflow: hidden;
   scroll-margin-top: 5rem;
   font-size: var(--font-size-S);
-  background-color: var(--card-color);
+  background-color: rgb(var(--card-color));
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
   border-radius: 45px;
   h1 {

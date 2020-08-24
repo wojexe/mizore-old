@@ -38,10 +38,10 @@ export default {
 
 /* VARIABLES */
 :root {
-  --background-color: rgb(18, 18, 18);
-  --inner-background-color: rgb(48, 48, 48);
-  --card-color: rgb(37, 37, 37);
-  --text-color: rgb(255, 255, 255);
+  --background-color: 18, 18, 18;
+  --inner-background-color: 48, 48, 48;
+  --card-color: 37, 37, 37;
+  --text-color: 255, 255, 255;
 
   --color-gradient: linear-gradient(
     to right,
@@ -65,8 +65,8 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: rgb(var(--background-color));
+  color: rgba(var(--text-color), 1);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -87,6 +87,24 @@ a {
   &:hover {
     transition: 0.3s ease-in-out transform;
     transform: scale(1.1);
+  }
+}
+.beatmap-card--mod {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em;
+  margin-right: 0.5em;
+  font-weight: 700;
+  font-size: var(--font-size-M);
+  width: var(--font-size-L);
+  height: var(--font-size-L);
+  color: rgb(0, 0, 0);
+  background-color: rgb(var(--text-color));
+  border-radius: 999px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.35);
+  &:last-of-type {
+    margin: 0;
   }
 }
 @media (min-width: 800px) {

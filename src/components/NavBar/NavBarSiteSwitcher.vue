@@ -78,7 +78,7 @@ export default {
   z-index: 150;
   &.active {
     transform: translate(calc(-50% - 0.25em), calc(1.22rem * 3));
-    background-color: var(--card-color);
+    background-color: rgb(var(--card-color));
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
     transition: all ease 0.3s;
     li {

@@ -15,12 +15,7 @@
         autocomplete="password-new"
         v-model="password"
       />
-      <BaseInput
-        className="key"
-        type="password"
-        autocomplete="off"
-        v-model="key"
-      />
+      <BaseInput className="key" autocomplete="off" v-model="key" />
       <BaseButton label="register" />
     </form>
   </BaseModal>
@@ -55,7 +50,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--card-color);
+  background-color: rgb(var(--card-color));
   border-radius: 35px;
   box-shadow: 0 0 35px rgba(0, 0, 0, 0.5);
   z-index: 200;

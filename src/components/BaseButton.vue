@@ -15,7 +15,7 @@ export default {
 .styled-button {
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--text-color);
+  color: rgba(var(--text-color), 1);
   background: var(--color-gradient);
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
   border-radius: 100px;

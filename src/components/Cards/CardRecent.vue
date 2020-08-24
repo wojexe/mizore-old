@@ -1,38 +1,17 @@
 <template>
-  <BaseCard title="Scores">
-    <BaseBeatmap
-      :backgroundSource="
-        'https://assets.ppy.sh/beatmaps/' + topScore.id + '/covers/cover.jpg'
-      "
-      :href="'https://osu.ppy.sh/beatmapsets/' + topScore.id"
-    >
-      <span class="beatmap-card--performance">{{ topScore.pp }}PP</span>
-      <span class="beatmap-card--artist">{{ topScore.artist }}</span>
-      <span class="beatmap-card--title">{{ topScore.title }}</span>
-      <span class="beatmap-card--diff">[{{ topScore.difficulty }}]</span>
-      <span class="beatmap-card--mods">
-        <BaseModIcon v-for="mod in topScore.mods" :key="mod">
-          {{ mod }}
-        </BaseModIcon>
-      </span>
-    </BaseBeatmap>
-    <BaseProfileTable title="Top scores" :scoreList="scores" />
-    <BaseProfileTable title="First places" :scoreList="scores" />
+  <BaseCard title="Recently played">
+    <BaseProfileTable :scoreList="scores" />
   </BaseCard>
 </template>
 
 <script>
 import BaseCard from "@/components/BaseCard.vue";
-import BaseBeatmap from "@/components/BaseBeatmap.vue";
 import BaseProfileTable from "@/components/Tables/BaseProfileTable.vue";
-import BaseModIcon from "@/components/BaseModIcon.vue";
 export default {
   name: "Scores",
   components: {
     BaseCard,
-    BaseBeatmap,
-    BaseProfileTable,
-    BaseModIcon
+    BaseProfileTable
   },
   data() {
     return {
@@ -105,18 +84,6 @@ export default {
         }
       ]
     };
-  },
-  computed: {
-    topScore() {
-      return {
-        id: this.scores[0].id,
-        artist: this.scores[0].artist,
-        title: this.scores[0].title,
-        difficulty: this.scores[0].difficulty,
-        mods: this.scores[0].mods,
-        pp: this.scores[0].pp
-      };
-    }
   }
 };
 </script>

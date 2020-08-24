@@ -29,7 +29,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--card-color);
+  background-color: rgb(var(--card-color));
   font-size: var(--font-size-S);
   font-weight: 700;
   font-style: italic;
